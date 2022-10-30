@@ -50,6 +50,8 @@ function changePlateStyleBlackSilver() {
   
 }
 
-
-
+// Alert for receipt number
+function receiptAlert() {
+    alert("good");
+};
 
