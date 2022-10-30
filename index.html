@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Plate Submission Form</title>
+</head>
+<body>
+        
+    
+<div id="container">
+<div class="form-wrap">
+    
+                <h1>Yokota Plaque Shop</h1>
+                <h2>2 x 4 Metal Engraved Plate Order</h2>
+    
+ <!-- Text Area -->
+    
+                
+    <form name="2x4-plate" method="post" data-netlify="true">
+            
+                <div class="form-group">
+                  
+                  <p id="charNum">Type your text in the black field below</p>
+                  
+                    <textarea type="text" name="plateText" id="output-text" class="plate-textarea" maxlength="121" cols="6" onkeyup="countChars(this)"></textarea>
+        
+                    </div>   
+
+        <!-- Text Area -->
+
+
+        <!-- plate color button -->
+    
+              <div class="plate-styles flex" >
+              
+              <h3 class="btn btn1" onclick="changePlateStyleGoldBlack()"> Gold & Black</h3>
+              
+              <h3 class="btn btn2" onclick="changePlateStyleBlackGold()"> Black & Gold</h3>
+              
+              <h3 class="btn btn3" onclick="changePlateStyleBlackSilver()"> Black & Silver</h3>
+                
+              </div>
+    
+        <!-- plate color button -->
+
+
+                
+                
+        <!-- Font Pull Down -->
+    
+                
+    
+                <div class="form-group">
+    
+                    <label class="font-select" for="font" id="fontpulldown">Select your font</label> 
+            
+                        <select id="input-font" class="input" onchange="changeFontStyle (this);" >
+    
+                            <option name="font" value="Times New Roman" selected="selected">
+                            Times New Roman
+                            </option>
+            
+                            <option name="font" value='Nunito'>Nunito</option>
+            
+                            <option name="font" value='Playfair Display'>Playfair Display</option>
+            
+                            <option name="font" value='Dancing Script'>Dancing Script</option>
+    
+                            <option name="font" value='Pacifico'>Pacifico</option>
+    
+                        </select>
+    
+                </div>
+              
+             
+         <!-- Font Pull Down -->
+               
+              <div class="form-group">
+                
+                <form action="*">
+                  
+                  <div class="form-group-inputs">
+                  
+                  <label for="fname" id="fname">First Name</label>
+                  
+                  <input type="text" id="fname" name="fname">
+                  
+                    <label for="lname" id="lname">Last Name</label>
+                    
+                    <input type="text" id="lname" name="lname">
+                    
+                    <label for="email" id="email">Email</label>
+                    
+                    <input type="email" id="email" name="email">
+                  
+                    </div>
+                  
+                </form>
+                
+                
+              </div>
+        
+    
+        </form>
+    
+</div>
+</div> 
+       
+    <script src="/script.js"></script>
+
+</body>
+</html>
