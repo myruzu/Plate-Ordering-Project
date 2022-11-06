@@ -36,7 +36,26 @@ margin: auto;
 padding: 30px 20px;
 }
 
+.header-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    
+}
 
+.header-img img {
+    width: 300px;
+    align-self: center;
+}
+
+.header-img h2 {
+    font-weight: 600;
+    font-size: ;
+    color: #fff;
+    margin-bottom: 50px;
+}
 
 .form-wrap h1 {
     font-size: calc(15px*1.618*1.618);
@@ -50,13 +69,6 @@ padding: 30px 20px;
     text-align: center;
 }
 
-.form-wrap h2 {
-  color: #EEC643;
-  font-size: calc(15px*1.618);
-  margin-top: -10px;
-  
-  
-}
 
 .form-wrap textarea {
     display:block;
@@ -233,6 +245,7 @@ select:focus {
   border:none;
   font-family: 'Roboto Serif', serif;
 }
+
 
 .submit-btn {
     margin: 35px auto;
