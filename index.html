@@ -5,85 +5,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Plate Submission Form</title>
+    
+    <title>2x4 Metal Plate | Order Form</title>
 </head>
 <body>
         
     
 <div id="container">
 <div class="form-wrap"> 
-            <div class="header-img">
+            <div class="header-img full-page">
                 <img src="/img/ENGRAVING-SHOP-WHT.svg" alt="Plaque-shop-logo">
-                <h2>2x4 Metal Plate</h2>
+                <h1>2x4 Metal Plate | Order Form</h1>
+                <a class="btn" href="#txt-box">Start</a>
+                
             </div>
     
- <!-- Text Area -->
+  <!-- Text Area -->
     
                 
-    <form name="2x4-plate" method="post" data-netlify="true">
-            
-                <div class="form-group">
+  <form name="2x4-plate" method="post" data-netlify="true">
+      <div class="full-page-grey" id="txt-box">
+          <div class="form-group">
                   
-                  <p id="charNum">Limited to 120 Characters</p>
+                    <p id="charNum">This plate size is limited to 120 Characters (including spaces)</p>
                   
-                    <textarea type="text" name="plateText" id="output-text" class="plate-textarea" maxlength="121" cols="6" onkeyup="countChars(this)" placeholder="Type Here"></textarea>
+                      <textarea type="text" name="plateText" id="output-text" class="plate-textarea" maxlength="121" cols="6" onkeyup="countChars(this)" placeholder="CLICK ME AND START TYPING"></textarea>
         
-                    </div>   
-
-        <!-- Text Area -->
+                      <!-- Text Area -->
 
 
-        <!-- plate color button -->
+                      <!-- plate color button -->
     
-              <div class="plate-styles flex" >
+                <div class="plate-styles flex-btn-column" >
+
+                  <label for="plate-color" id="plate-color-label">Choose a Plate Color</label>
+
+                  <h3 class="btn btn2" onclick="changePlateStyleBlackGold()"> Black Plate | Gold Text</h3>
               
-              <h3 class="btn btn1" onclick="changePlateStyleGoldBlack()"> Gold & Black</h3>
+                  <h3 class="btn btn1" onclick="changePlateStyleGoldBlack()"> Gold Plate | Black Text</h3>
               
-              <h3 class="btn btn2" onclick="changePlateStyleBlackGold()"> Black & Gold</h3>
-              
-              <h3 class="btn btn3" onclick="changePlateStyleBlackSilver()"> Black & Silver</h3>
+                  <h3 class="btn btn3" onclick="changePlateStyleBlackSilver(); changeColor()"> Black Plate | Silver Text</h3>
                 
-              </div>
-    
-        <!-- plate color button -->
-
-
-                
-                
-        <!-- Font Pull Down -->
-    
-                
-    
-                <div class="form-group, font-select-bdg">
-    
-                    <label class="font-select" for="font" id="fontpulldown">Select your font</label> 
-            
-                        <select id="input-font" class="input" onchange="changeFontStyle (this);" >
-    
-                            <option name="font" value="Times New Roman" selected="selected">
-                            Times New Roman
-                            </option>
-            
-                            <option name="font" value='Nunito'>Nunito</option>
-            
-                            <option name="font" value='Playfair Display'>Playfair Display</option>
-            
-                            <option name="font" value='Dancing Script'>Dancing Script</option>
-    
-                            <option name="font" value='Pacifico'>Pacifico</option>
-    
-                        </select>
-    
                 </div>
-              
-             
+
+            </div>
+            
+         </div>
+
          <!-- Font Pull Down -->
+
+         <div class="font-select-bdg form-group flex">
+    
+          <!-- <label class="font-select" for="font" id="fontpulldown">Select your font</label>  -->
+          
+  
+              <select id="input-font" class="input" onchange="changeFontStyle (this);" >
+
+                  <option name="font" value="Roboto" selected="selected">
+                  Roboto
+                  </option>
+
+                  <option name="font" value="Times New Roman">
+                    Times New Roman
+                    </option>
+  
+                  <option name="font" value='Nunito'>Nunito</option>
+  
+                  <option name="font" value='Playfair Display'>Playfair Display</option>
+  
+                  <option name="font" value='Dancing Script'>Dancing Script</option>
+
+                  <option name="font" value='Pacifico'>Pacifico</option>
+
+              </select>
+
+              <!-- Add file -->
+
+              <div>
+
+                <label for="addfile" class="addfile-label">Add an image</label>
+
+                <input type="file" id="addfile" name="filename" class="addfile-btn">
+
+              
+
+            </div>
+
+      </div>  
+
+
+        
+             
                
               <div class="form-group">
                 
-                <form action="*">
                   
-                  <div class="form-group-inputs">
+                <div class="form-group-inputs">
                   
                   <!-- <label for="fname" id="fname">First Name</label>
                   
@@ -97,18 +114,17 @@
                     
                     <input type="email" id="email" name="email"> -->
 
-                    <label for="receipt" id="reciept"> Receipt #</label>
 
-                    <input type="text" id="reciept">
+                    <!-- Receipt -->
 
+                    <label for="receipt"> Receipt #</label>
+
+                    <input type="text" id="reciept" maxlength="5" onkeypress="return checkNumber(event)">
 
                     <button id="submit-btn" type="submit" class="submit-btn">Done</button>
 
-                    </div>
+                </div>
                   
-                </form>
-                
-                
               </div>
         
     
@@ -119,5 +135,30 @@
        
     <script src="/script.js"></script>
 
+    // JQuery
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous">
+</script>
+
+<script>
+ // Smooth Scrolling
+ $('.btn').on('click', function(event) { 
+  if (this.hash !== '') {
+      event.preventDefault();
+      const hash = this.hash;
+      $('html, body').animate(
+          {
+              scrollTop: $(hash).offset().top
+          },
+          800
+      );
+  }
+   });
+  </script>
+
 </body>
+
+
 </html>
