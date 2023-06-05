@@ -5,20 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     
-    <title>2x4 Metal Plate | Order Form</title>
+    <title>Metal Plate Order Form</title>
 </head>
 <body>
-        
-    
+
+  <nav>
+    <a class="logo" href="#"></a>
+    <ul>
+      <li class="dropdown">
+        <a href="#">Make a Plate</a>
+        <div class="dropdown-content">
+          <a href="#">1x4</a>
+          <a href="#">2x4</a>
+          <a href="#">2x5</a>
+          <a href="#">3x6</a>
+        </div>
+      </li>
+      <li><a href="#">Design</a></li>
+      <li><a href="#">Charges & Fees</a></li>
+    </ul>
+  </nav>
+        <div class="bkg-img">
+  <img src="/img/Plaque_Shop_logo.svg" alt="Plaque-shop-logo">
+        </div>
+
+        <div class="btn-container">
+        <a class="btn btn-main" href="#text-box">Start Designing</a>
+        </div>
+
 <div id="container">
+  
+
 <div class="form-wrap"> 
-            <div class="header-img full-page">
-                <img src="/img/ENGRAVING-SHOP-WHT.svg" alt="Plaque-shop-logo">
-                <h1>2x4 Metal Plate | Order Form</h1>
-                <a class="btn" href="#txt-box">Start</a>
+
+            <!-- <div class="header-img full-page">
+          
                 
-            </div>
+            </div> -->
     
   <!-- Text Area -->
     
@@ -27,65 +52,133 @@
       <div class="full-page-grey" id="txt-box">
           <div class="form-group">
                   
-                    <p id="charNum">This plate size is limited to 120 Characters (including spaces)</p>
-                  
-                      <textarea type="text" name="plateText" id="output-text" class="plate-textarea" maxlength="121" cols="6" onkeyup="countChars(this)">Type text here</textarea>
-        
-                      <!-- Text Area -->
+                    <!-- <p id="charNum">This plate size is limited to 120 Characters (including spaces)</p> -->
+
+                    
+      <!-- Tool Tips Font selection -->
+
+                    <div id="notification"></div>
 
 
-                      <!-- plate color button -->
+       <!-- plate color button -->
     
-                <div class="plate-styles flex-btn-column" >
+                  <div class="plate-styles flex-btn-column" >
 
-                  <label for="plate-color" id="plate-color-label">Choose a Plate Color</label>
+                  <!-- <label for="plate-color" id="plate-color-label">Choose a Plate Color</label> -->
 
-                  <h3 class="btn btn2" onclick="changePlateStyleBlackGold()"> Black Plate | Gold Text</h3>
+                  
+
+                  <h3 class="plate-design bounce fade-in">Start Designing your plate by choosing the color</h3>
+
+                  <h3 class="btn btn2" onclick="changePlateStyleBlackGold();resetSquareInchPrice()"> Black Plate | Gold Text</h3>
               
-                  <h3 class="btn btn1" onclick="changePlateStyleGoldBlack()"> Gold Plate | Black Text</h3>
+                  <h3 class="btn btn1" onclick="changePlateStyleGoldBlack();resetSquareInchPrice()"> Gold Plate | Black Text</h3>
               
-                  <h3 class="btn btn3" onclick="changePlateStyleBlackSilver(); changeColor()"> Black Plate | Silver Text</h3>
+                  <h3 class="btn btn3" onclick="changePlateStyleBlackSilver();changeSquareInchPrice()"> Black Plate | Silver Text</h3>
                 
-                </div>
+                  </div>
 
+
+  <!-- Text Area -->
+                  
+                      <textarea type="text" name="plateText" id="output-text" class="plate-textarea size-input" maxlength="121" cols="6" oninput="calculateCost()" onkeyup="countChars(this)">Type text here</textarea>
+  
+  <!-- Plate size adjust -->
+
+                      <div class="plate-size-input-container"></div>
+                        <label for="widthInput" class="plate-size-input">Width (inches):</label>
+                        <input type="number" id="widthInput" oninput="updateTextAreaSize()" value="4">
+                      
+                      
+                      
+                        <label for="heightInput" class="plate-size-input">Height (inches):</label>
+                        <input type="number" id="heightInput" oninput="updateTextAreaSize()" value="2">
+                      
+                        
+
+                        <label for="squareInches">Square Inches:</label>
+                        <input type="text" id="squareInches" readonly>
+
+                      
+
+                        <label for="totalCost">Total Cost ($):</label>
+                        <input type="text" id="totalCost" readonly>
+
+  
+                      <div class="flex-div-row-center">
+
+  <!-- Line Counter -->
+  
+                        <p class="costCount">Number of Lines: <span id="lineCount">0</span></p>
+  
+  <!-- Cost Calculator -->
+  
+                        <p class="costCount">Total Cost: <span id="total">$0.00</span></p>
+  
+                      </div>
+
+
+
+  
+
+
+                      <div class="font-select-bdg form-group flex">
+    
+                        <!-- <label class="font-select" for="font" id="fontpulldown">Select your font</label>  -->
+                        
+                
+                            <select id="font" class="input select-menu" onchange="changeFontStyle(this); showNotification(this.value)">
+              
+                                <option disabled="" value="" selected="">
+                                Change Font
+                                </option>
+              
+                                <option  value="Roboto">
+                                Roboto
+                                </option>
+              
+                                <option value="Times New Roman">
+                                  Times New Roman
+                                  </option>
+
+                                <option value='Libre Baskerville'>
+                                  Libre Baskerville
+                                  </option>
+                
+                                <option value='Nunito'>Nunito</option>
+                
+                                <option value='Playfair Display'>Playfair Display</option>
+                
+                                <option value='Dancing Script'>Dancing Script</option>
+              
+                                <option value='Pacifico'>Pacifico</option>
+              
+                            </select>
+
+          <!-- Tool Tips disable -->
+
+                            <label class="checkbox-wrapper">
+                              <input type="checkbox" onclick="toggleNotification()">
+                              <span class="checkbox-custom"></span>
+                              Tool Tips
+                            </label>
+
+              
+                          </div> 
+
+                  
+
+    
+
+         
             </div>
             
          </div>
-
-         <!-- Font Pull Down -->
-
-         <div class="font-select-bdg form-group flex">
-    
-          <label class="font-select" for="font" id="fontpulldown">Select your font</label> 
-          
-  
-              <select id="font" class="input" onchange="changeFontStyle(this);" >
-
-                  <option disabled="" value="" selected="">
-                  Select Font
-                  </option>
-
-                  <option  value="Roboto">
-                  Roboto
-                  </option>
-
-                  <option value="Times New Roman">
-                    Times New Roman
-                    </option>
-  
-                  <option value='Nunito'>Nunito</option>
-  
-                  <option value='Playfair Display'>Playfair Display</option>
-  
-                  <option value='Dancing Script'>Dancing Script</option>
-
-                  <option value='Pacifico'>Pacifico</option>
-
-              </select>
+ 
 
               <!-- Add file -->
 
-              <div>
+              <!-- <div>
 
                 <label for="addfile" class="addfile-label">Add an image</label>
 
@@ -93,9 +186,9 @@
 
               
 
-            </div>
+            </div> -->
 
-      </div>  
+       
 
 
         
@@ -139,12 +232,60 @@
        
     <script src="/script.js"></script>
 
+
+
     
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous">
 </script>
+
+
+<script>
+  var notificationTimeout;
+  var notificationDisabled = false;
+
+  function showNotification(selectedFont) {
+    if (notificationDisabled) {
+      return;
+    }
+
+    var notification = document.getElementById("notification");
+    notification.textContent = selectedFont;
+    notification.style.opacity = "1";
+    notification.style.display = "block";
+
+    if (selectedFont === "Roboto") {
+          message = "Great modern looking font";
+        } else if (selectedFont === "Times New Roman") {
+          message = "Times New Roman is a great font for official looking text";
+        } else if (selectedFont === "Libre Baskerville") {
+          message = "Great for a balance of modern and classic";
+        } else if (selectedFont === "Dancing Script") {
+          message = "GFun and playful font";
+        } else {
+          message = "Font selected: " + selectedFont;
+        }
+
+        notification.textContent = message;
+        notification.style.display = "block";
+
+    clearTimeout(notificationTimeout);
+    notificationTimeout = setTimeout(function() {
+      notification.style.opacity = "0";
+    }, 4000); // 4 seconds
+  }
+
+  function toggleNotification() {
+    var checkbox = document.querySelector(".checkbox-wrapper input[type='checkbox']");
+    notificationDisabled = checkbox.checked;
+  }
+
+  
+</script>
+
+
 
 <script>
  // Smooth Scrolling
