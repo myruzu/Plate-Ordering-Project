@@ -32,7 +32,7 @@
         </div>
 
         <div class="btn-container">
-        <a class="btn btn-main" href="#text-box">Start Designing</a>
+        <a class="btn btn-main" href="#txt-box">Start Designing</a>
         </div>
 
 <div id="container">
@@ -49,8 +49,10 @@
     
                 
   <form name="2x4-plate" method="post" data-netlify="true">
-      <div class="full-page-grey" id="txt-box">
-          <div class="form-group">
+     
+    <div class="full-page-grey" id="txt-box">
+          
+        <div class="form-group">
                   
                     <!-- <p id="charNum">This plate size is limited to 120 Characters (including spaces)</p> -->
 
@@ -61,48 +63,50 @@
 
 
        <!-- plate color button -->
+                
+                   <h3 class="plate-design bounce fade-in">Start Designing your plate by choosing the color</h3>
     
-                  <div class="plate-styles flex-btn-column" >
+              <div class="plate-styles flex-btn-row" >
 
-                  <!-- <label for="plate-color" id="plate-color-label">Choose a Plate Color</label> -->
-
-                  
-
-                  <h3 class="plate-design bounce fade-in">Start Designing your plate by choosing the color</h3>
-
-                  <h3 class="btn btn2" onclick="changePlateStyleBlackGold();resetSquareInchPrice()"> Black Plate | Gold Text</h3>
+                  <h3 class="btn-circle btn2" onclick="changePlateStyleBlackGold();resetSquareInchPrice();changePlaceholderColor('#CCAC78')"> Brass BLK</h3>
               
-                  <h3 class="btn btn1" onclick="changePlateStyleGoldBlack();resetSquareInchPrice()"> Gold Plate | Black Text</h3>
+                  <h3 class="btn-circle btn1" onclick="changePlateStyleGoldBlack();resetSquareInchPrice();changePlaceholderColor('#2E2624')"> Brass Ink</h3>
               
-                  <h3 class="btn btn3" onclick="changePlateStyleBlackSilver();changeSquareInchPrice()"> Black Plate | Silver Text</h3>
+                  <h3 class="btn-circle btn3" onclick="changePlateStyleBlackSilver();changeSquareInchPrice();changePlaceholderColor('#AFA9A4')"> Alum BLK</h3>
                 
                   </div>
 
 
   <!-- Text Area -->
                   
-                      <textarea type="text" name="plateText" id="output-text" class="plate-textarea size-input" maxlength="121" cols="6" oninput="calculateCost()" onkeyup="countChars(this)">Type text here</textarea>
+                      <textarea type="text" name="plateText" id="output-text" class="plate-textarea size-input" maxlength="121" cols="6" oninput="calculateCost()" onkeyup="countChars(this)" placeholder="Type your text here"></textarea>
   
   <!-- Plate size adjust -->
 
-                      <div class="plate-size-input-container"></div>
+                            <h3 class="size-input-h3 ">Plate Material Cost</h3>
+
+                      <div class="plate-size-input-container">
+
+                      
                         <label for="widthInput" class="plate-size-input">Width (inches):</label>
-                        <input type="number" id="widthInput" oninput="updateTextAreaSize()" value="4">
+                        <input type="number" id="widthInput" class="modern-input" oninput="updateTextAreaSize()" value="4">
                       
                       
                       
                         <label for="heightInput" class="plate-size-input">Height (inches):</label>
-                        <input type="number" id="heightInput" oninput="updateTextAreaSize()" value="2">
+                        <input type="number" id="heightInput" class="modern-input" oninput="updateTextAreaSize()" value="2">
                       
                         
 
-                        <label for="squareInches">Square Inches:</label>
+                        <label for="squareInches" class="plate-size-input">Square Inches:</label>
                         <input type="text" id="squareInches" readonly>
 
                       
 
-                        <label for="totalCost">Total Cost ($):</label>
+                        <label for="totalCost" class="plate-size-input">Plate Material Cost ($):</label>
                         <input type="text" id="totalCost" readonly>
+
+                      </div>
 
   
                       <div class="flex-div-row-center">

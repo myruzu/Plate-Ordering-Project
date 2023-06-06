@@ -115,23 +115,18 @@ window.addEventListener('scroll', () => {
 
 // Plate size adjustment
 
-function updateTextAreaSize() {
-  var widthInput = document.getElementById('widthInput');
-  var heightInput = document.getElementById('heightInput');
+function changeWidth() {
   var textarea = document.getElementById('output-text');
+  var currentWidth = textarea.offsetWidth;
+  var newWidth = currentWidth + 72;
+  textarea.style.width = newWidth + 'px';
+}
 
-  if (widthInput.value !== '' && heightInput.value !== '') {
-    var widthInPixels = widthInput.value * 97;
-    var heightInPixels = heightInput.value * 97;
-
-    textarea.style.width = widthInPixels + 'px';
-    textarea.style.height = heightInPixels + 'px';
-    textarea.removeAttribute('readonly');
-  } else {
-    textarea.style.width = '388px';
-    textarea.style.height = '194px';
-    textarea.setAttribute('readonly', 'readonly');
-  }
+function changeHeight() {
+  var textarea = document.getElementById('output-text');
+  var currentHeight = textarea.offsetHeight;
+  var newHeight = currentHeight + 72;
+  textarea.style.height = newHeight + 'px';
 }
 
 // Update textarea size when the window is resized
@@ -157,8 +152,9 @@ function updateTextAreaSize() {
     var squareInches = width * height;
     var totalCost = squareInches * squareInchPrice;
 
-    textarea.style.width = width * 97 + 'px';
-    textarea.style.height = height * 97 + 'px';
+    textarea.style.width = width * 72 + 'px';
+    textarea.style.height = height * 72 + 'px';
+    // it was 97 x 97 px
 
     squareInchesInput.value = squareInches.toFixed(2);
     totalCostInput.value = totalCost.toFixed(2);
@@ -183,6 +179,13 @@ function changeSquareInchPrice() {
 
 
 
+// Placeholder Text Color Change
+function changePlaceholderColor(color) {
+  var textarea = document.getElementById('output-text');
+  document.documentElement.style.setProperty('--placeholder-color', color);
+
+
+
       
 
 function checkNumber(event) {
@@ -196,4 +199,4 @@ return true;
 
 
 
-
+}
