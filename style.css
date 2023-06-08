@@ -65,7 +65,7 @@ padding: 30px 20px;
 nav {
   background-color: black;
   color: white;
-  padding: 15px;
+  padding: 15px 25px;
 }
 
 nav .logo {
@@ -116,23 +116,12 @@ nav ul li a:hover {
   display: block;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+.dropdown-content a:hover {
+  color: #fff;
 }
 
-
-/* Plate Design */
-
-.full-page-grey {
-
-  height: 100vh;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 25px;
-  margin: 75px 0;
-  /* border: #0D0C08 10px solid; */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .bkg-img {
@@ -153,6 +142,35 @@ nav ul li a:hover {
   height: auto;
   z-index: -1;
 }
+
+.bkg-img-fees img {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 80%;
+  min-height: 80%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
+
+
+/* Plate Design */
+
+.full-page-grey {
+
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 25px;
+  margin: 75px 0;
+  /* border: #0D0C08 10px solid; */
+}
+
 
 .btn-main {
   width: 50vw;
@@ -294,6 +312,8 @@ textarea:focus, input:focus {
   border-radius: 25px;
 }
 
+
+
 .plate-size-input-container .strong {
   font-weight: 800;
 }
@@ -303,11 +323,11 @@ textarea:focus, input:focus {
   -webkit-appearance: none; /* For Safari */
   width: 75px; /* Adjust width as needed */
   height: 25px; /* Adjust height as needed */
-  background-color: #f1f1f1; /* Set background color */
+  background-color: #333; /* Set background color */
   border: none; /* Remove borders */
   border-radius: 50%; /* Make it round */
   font-size: 16px; /* Adjust font size as needed */
-  color: #333; /* Set text color */
+  color: #f4f4f4; /* Set text color */
   text-align: center; /* Center text horizontally */
 }
 
@@ -324,6 +344,7 @@ textarea:focus, input:focus {
 .engraving-fee {
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 45px;
 }
 
 .engraving-fee-title {
@@ -501,11 +522,8 @@ select:focus {
     padding-bottom: 20px;
 }
 
-/* .font-select-bdg {
-    background: #333;
-    padding: 40px 0;
-    margin: 25px 0 100px;
-} */
+
+
 
 
 
@@ -519,16 +537,7 @@ select:focus {
 }
 
 
-/* .flex-btn-column {
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  gap: 10px;
-} */
+
 
 .flex-btn-row {
   display:flex;

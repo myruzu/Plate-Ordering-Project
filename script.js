@@ -94,6 +94,8 @@ function isElementInViewport(element) {
   );
 }
 
+
+
 // Function to add the animation classes
 function startAnimation() {
   title.classList.add('animated', 'fade-in');
@@ -111,6 +113,8 @@ window.addEventListener('scroll', () => {
     setTimeout(stopAnimation, 5000); // Stop animation after 5 seconds
   }
 });
+
+
 
 
 // Plate size adjustment
@@ -179,14 +183,16 @@ function changeSquareInchPrice() {
 
 
 
+
+
+
+
+
 // Placeholder Text Color Change
 function changePlaceholderColor(color) {
   var textarea = document.getElementById('output-text');
   document.documentElement.style.setProperty('--placeholder-color', color);
-
-
-
-      
+   
 
 function checkNumber(event) {
   var aCode = event.which ? event.which : event.keyCode;
