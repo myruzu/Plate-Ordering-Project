@@ -218,23 +218,6 @@ nav ul li a:hover {
   text-align: center;
 }
 
-/* @keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-} */
-
-/* .bounce.animated {
-  animation: bounce 5s;
-}
-
-.fade-in.animated {
-  animation: fade-in 4s;
-} */
-
 
 
 
@@ -454,25 +437,6 @@ textarea:hover::-webkit-input-placeholder {
     text-align: center;
 }
 
-#notification {
-  /* notification styles */
-  font-family: 'roboto';
-  font-weight: 400;
-  position: fixed;
-  bottom: 400px;
-  left: 20%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 400px;
-  padding: 10px;
-  background-color: #333;
-  color: #f4f4f4;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
 .checkbox-wrapper {
   position: block;
   bottom: 40px;
@@ -484,30 +448,6 @@ textarea:hover::-webkit-input-placeholder {
   font-size: 16px;
 }
 
-.checkbox-wrapper input[type="checkbox"] {
-  display: none;
-}
-
-.checkbox-wrapper .checkbox-custom {
-  width: 18px;
-  height: 18px;
-  border: 1px solid #333;
-  border-radius: 3px;
-  margin-right: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.checkbox-wrapper .checkbox-custom::before {
-  content: "✔";
-  color: transparent;
-  font-size: 12px;
-}
-
-.checkbox-wrapper input[type="checkbox"]:checked + .checkbox-custom::before {
-  color: #333;
-}
 
 select:focus {
     outline: none;
