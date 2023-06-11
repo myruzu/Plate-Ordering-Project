@@ -1,0 +1,63 @@
+.grey-bkg {
+    background: #f1f1f1;
+    height: 100%;
+    padding: 50px;
+}
+
+.bkg-img-fees img {
+    display: block;
+    height: 80vh;
+    margin: 0 auto;
+  }
+
+  .txt {
+    font-size: 14pt;
+    line-height: 22.652pt;
+  }
+
+  .txt h2 {
+    padding: 100px 0 20px 0;
+    font-size: 22.652;
+  }
+
+  .txt h1 {
+    font-family: 'Staatliches';
+    font-size: 58.96pt;
+    text-align: center;
+    padding: 50px 0;
+    line-height: 70pt;
+  }
+
+  .txt img {
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .btn-sm {
+    background-color: #000;
+    color: #F6F6f8;
+    width: 40%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-family: 'montserrat';
+    font-weight: bold;
+    font-size: 14pt;
+    text-align-last: center;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.2rem;
+    margin: 25px auto 0 auto;
+    transition: all .8s;
+  }
+
+  .btn-sm:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
+  

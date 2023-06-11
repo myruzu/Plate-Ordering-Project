@@ -143,17 +143,6 @@ nav ul li a:hover {
   z-index: -1;
 }
 
-.bkg-img-fees img {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 80%;
-  min-height: 80%;
-  width: auto;
-  height: auto;
-  z-index: -1;
-}
 
 
 
@@ -297,7 +286,7 @@ textarea:focus, input:focus {
 
 
 
-.plate-size-input-container .strong {
+.strong {
   font-weight: 800;
 }
 
