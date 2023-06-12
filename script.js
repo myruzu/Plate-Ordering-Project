@@ -46,55 +46,55 @@ function changePlateStyleBlackSilver() {
 
 
 
-// Cost Calculator
+// Cost Calculator for line fees
+
+      // function calculateCost() {
+      //   // Get the textarea element and the content typed by the user
+      //   var textarea = document.getElementById("output-text");
+      //   var content = textarea.value;
+  
+      //   // Split the content into lines
+      //   var lines = content.split(/\r\n|\r|\n/);
+  
+      //   // Filter out empty lines
+      //   var nonEmptyLines = lines.filter(function(line) {
+      //     return line.trim() !== "";
+      //   });
+  
+      //   // Calculate the total cost based on the number of non-empty lines
+      //   var cost = nonEmptyLines.length * 3;
+  
+      //   // Display the total cost in a separate element
+      //   document.getElementById("total").textContent = "$" + cost.toFixed(2);
+  
+      //   // Display the line count in a separate element
+      //   document.getElementById("lineCount").textContent = nonEmptyLines.length;
+      // }
+
 
       function calculateCost() {
-        // Get the textarea element and the content typed by the user
-        var textarea = document.getElementById("output-text");
-        var content = textarea.value;
-  
+        // Get the div element and the content typed by the user
+        var div = document.getElementById("output-text");
+        var content = div.innerText;
+      
         // Split the content into lines
         var lines = content.split(/\r\n|\r|\n/);
-  
+      
         // Filter out empty lines
         var nonEmptyLines = lines.filter(function(line) {
           return line.trim() !== "";
         });
-  
+      
         // Calculate the total cost based on the number of non-empty lines
         var cost = nonEmptyLines.length * 3;
-  
+      
         // Display the total cost in a separate element
         document.getElementById("total").textContent = "$" + cost.toFixed(2);
-  
+      
         // Display the line count in a separate element
         document.getElementById("lineCount").textContent = nonEmptyLines.length;
       }
-
-
-
-
-
-
-
-
-      // Directions for design bounce
-
-// Get the reference to the element
-const title = document.querySelector('.bounce');
-
-// Function to check if the element is in the viewport
-function isElementInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-
+      
 
 // Function to add the animation classes
 function startAnimation() {
@@ -182,7 +182,11 @@ function changeSquareInchPrice() {
 }
 
 
-
+// Quil Integration 
+var textarea = document.getElementById('output-text');
+var quill = new Quill(textarea, {
+  theme: 'snow'
+});
 
 
 

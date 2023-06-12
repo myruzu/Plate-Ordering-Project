@@ -65,7 +65,7 @@
                 
             </div> -->
     
-  <!-- Text Area -->
+
     
                 
   <form name="2x4-plate" method="post" data-netlify="true">
@@ -74,55 +74,87 @@
           
         <div class="form-group">
                   
-                    <!-- <p id="charNum">This plate size is limited to 120 Characters (including spaces)</p> -->
 
-
-                    
-
-
-       <!-- plate color button -->
-                
-                   <h3 class="plate-design">Start Designing your plate by choosing the color</h3>
     
-              <div class="plate-styles flex-btn-row" >
-
-                  <h3 class="btn-circle btn2" onclick="changePlateStyleBlackGold();resetSquareInchPrice();changePlaceholderColor('#CCAC78')"> Brass BLK</h3>
               
-                  <h3 class="btn-circle btn1" onclick="changePlateStyleGoldBlack();resetSquareInchPrice();changePlaceholderColor('#2E2624')"> Brass Ink</h3>
-              
-                  <h3 class="btn-circle btn3" onclick="changePlateStyleBlackSilver();changeSquareInchPrice();changePlaceholderColor('#AFA9A4')"> Alum BLK</h3>
-                
-                  </div>
 
 
   <!-- Text Area -->
                   
-                      <textarea type="text" name="plateText" id="output-text" class="plate-textarea size-input" maxlength="121" cols="6" oninput="calculateCost()" onkeyup="countChars(this)" placeholder="Type your text here"></textarea>
+  <div id="output-text" class="plate-textarea size-input editable-div" oninput="calculateCost()" contenteditable="true">Type your text here</div>
+
+
+  <div class="plate-styles flex-btn-row" >
+
+    <h3 class="btn-circle btn2" onclick="changePlateStyleBlackGold();resetSquareInchPrice();changePlaceholderColor('#CCAC78')"> Brass BLK</h3>
+
+    <h3 class="btn-circle btn1" onclick="changePlateStyleGoldBlack();resetSquareInchPrice();changePlaceholderColor('#2E2624')"> Brass Ink</h3>
+
+    <h3 class="btn-circle btn3" onclick="changePlateStyleBlackSilver();changeSquareInchPrice();changePlaceholderColor('#AFA9A4')"> Alum BLK</h3>
+  
+    </div>
+
+    <div class="font-select-bdg form-group flex">
+          
+  
+      <select id="font" class="input select-menu" onchange="changeFontStyle(this); showNotification(this.value)">
+
+          <option disabled="" value="" selected="">
+          Change Font
+          </option>
+
+          <option  value="Roboto">
+          Roboto
+          </option>
+
+          <option value="Times New Roman">
+            Times New Roman
+            </option>
+
+          <option value='Libre Baskerville'>
+            Libre Baskerville
+            </option>
+
+          <option value='Nunito'>Nunito</option>
+
+          <option value='Playfair Display'>Playfair Display</option>
+
+          <option value='Dancing Script'>Dancing Script</option>
+
+          <option value='Pacifico'>Pacifico</option>
+
+      </select>
+
+
+    </div>
+
   
   <!-- Plate size adjust -->
 
+  
+
                             <h3 class="size-input-h3 ">Plate Material Cost</h3>
 
-                      <div class="plate-size-input-container">
+                      <div class="plate-size-input-container border">
 
-                      
+                      <div class="flex-column">
                         <label for="widthInput" class="plate-size-input">Width (inches):</label>
                         <input type="number" id="widthInput" class="modern-input" oninput="updateTextAreaSize()" value="4">
-                      
-                      
-                      
-                        <label for="heightInput" class="plate-size-input">Height (inches):</label>
-                        <input type="number" id="heightInput" class="modern-input" oninput="updateTextAreaSize()" value="2">
-                      
-                        
 
                         <label for="squareInches" class="plate-size-input">Square Inches:</label>
                         <input type="text" id="squareInches" readonly>
-
                       
+                      
+                      </div>
+                      <div class="flex-column">
+
+                        <label for="heightInput" class="plate-size-input">Height (inches):</label>
+                        <input type="number" id="heightInput" class="modern-input" oninput="updateTextAreaSize()" value="2">
 
                         <label for="totalCost" class="plate-size-input"><span class="strong">Material Cost ($):</span></label>
                         <input type="text" id="totalCost" readonly>
+                      </div>
+                    </div>
 
                       </div>
 
@@ -130,75 +162,22 @@
                       
 
   <!-- Line Counter -->
-
+                
                         <h3 class="engraving-fee-title">Engraving Cost</h3>
-                        
-                    <div class="engraving-fee">
+                     
+                    <div class="engraving-fee border">
 
                         <p class="costCount">Number of Lines: <span id="lineCount">0</span></p>
-  
+                        
+
+                        <p class="costCount">Total Cost: <span id="total">$0.00</span></p>
+                 </div>
   <!-- Cost Calculator -->
   
-                        <p class="costCount">Total Cost: <span id="total">$0.00</span></p>
+                        
   
                       
                     </div>
-
-
-
-  
-
-
-                      <div class="font-select-bdg form-group flex">
-    
-                        <!-- <label class="font-select" for="font" id="fontpulldown">Select your font</label>  -->
-                        
-                
-                            <select id="font" class="input select-menu" onchange="changeFontStyle(this); showNotification(this.value)">
-              
-                                <option disabled="" value="" selected="">
-                                Change Font
-                                </option>
-              
-                                <option  value="Roboto">
-                                Roboto
-                                </option>
-              
-                                <option value="Times New Roman">
-                                  Times New Roman
-                                  </option>
-
-                                <option value='Libre Baskerville'>
-                                  Libre Baskerville
-                                  </option>
-                
-                                <option value='Nunito'>Nunito</option>
-                
-                                <option value='Playfair Display'>Playfair Display</option>
-                
-                                <option value='Dancing Script'>Dancing Script</option>
-              
-                                <option value='Pacifico'>Pacifico</option>
-              
-                            </select>
-
-
-          <!-- Fonts Pop-up -->
-
-
-
-          <!-- Tool Tips disable -->
-
-                          
-
-              
-                          </div> 
-
-                  
-
-    
-
-         
             </div>
             
          </div>
@@ -313,6 +292,10 @@
   
 </script>
 
+<!-- Quill Script CDN -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+
 
 
 <script>
@@ -330,6 +313,38 @@
   }
    });
   </script>
+
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+
+<!-- Quil Toolbar -->
+<script>
+  var toolbarOptions = [
+      ['bold', 'italic'], 
+      // 'strike' 'underline'
+      // ['link', 'image', 'video'],
+      // ['blockquote', 'code-block'],
+      [{ 'header': 1 }, { 'header': 2 }],
+      // [{ 'script': 'sub' }, { 'script': 'super' }],
+      // [{ 'indent': '-1' }, { 'indent': '+1' }],
+      // [{ 'direction': 'rtl' }],
+      // [{ 'size': ['small', false, 'large', 'huge'] }],
+      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+      // [{ 'color': [] }, { 'background': [] }],
+      // [{ 'font': [] }],
+      // [{ 'align': [] }],
+      // ['clean']
+    ];
+
+    var quill = new Quill('#output-text', {
+      theme: 'snow',
+      modules: {
+        toolbar: toolbarOptions
+      }
+    });
+
+  
+</script>
 
 </body>
 
