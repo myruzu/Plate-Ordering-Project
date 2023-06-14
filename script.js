@@ -205,8 +205,16 @@ function checkNumber(event) {
 return true;
 }
 
-
-
-
-
 }
+
+
+function enlargeImage(img) {
+  var enlargedImage = document.getElementById("enlarged-image");
+  enlargedImage.src = img.src;
+  document.getElementById("enlarged-image-container").style.display = "block";
+}
+
+function closeEnlargedImage() {
+  document.getElementById("enlarged-image-container").style.display = "none";
+}
+
