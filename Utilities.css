@@ -3,6 +3,46 @@
 
 
 
+/* Containers */
+
+.container-1200px {
+  max-width:1200px;
+  padding: 50px 25px;
+  margin: 0 auto;
+}
+
+.container-txt {
+  max-width: 1200px;
+  padding: 50px 10px;
+}
+
+.container-medium-txt {
+  max-width: 1200px;
+}
+
+.container-txt-800 {
+  max-width: 800px;
+  background: #fff;
+}
+
+
+/* IMG */
+.img-fit {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.img-oversized {
+  max-width: 65vw;
+  min-width: 350px;
+  margin: 35px auto;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 25px;
+  flex-grow: none;
+}
+
+
 
 
 /* flex */
@@ -19,21 +59,49 @@
   align-items: center;
 }
 
+.flex-row-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
 
 
 
 
+
+/* Backgrounds */
 
 .grey-bkg {
     background: #f1f1f1;
+    height: 100%;
+    padding: 50px 0;
+}
+
+.inverted-bkg {
+    background: #222;
+    color: #f1f1f1;
     height: 100%;
     padding: 50px;
 }
 
 .bkg-img-fees img {
     display: block;
-    height: 80vh;
+    max-height: 80vh;
+    margin: 0 auto;
+  }
+
+  .bkg-img-main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+.bkg-img-main img {
+    display: block;
+    max-height: 80vh;
     margin: 0 auto;
   }
 
@@ -60,6 +128,43 @@
   .txt {
     font-size: 14pt;
     line-height: 22.652pt;
+  }
+
+  .giant-txt {
+    font-size: 45pt;
+    line-height: auto;
+    margin: 50px auto;
+    text-align: center;
+  }
+
+  .medium-txt {
+    font-size: 35pt;
+    line-height: 85.652pt;
+    margin: 25px auto;
+    text-align: center;
+  }
+
+  .body-txt {
+    font-size: 18pt;
+  }
+
+  .comic {
+    font-family: "cc-smash-open", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  }
+
+  .futura-bold-header {
+    font-family: "futura-pt-bold", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: calc(22.652pt*1.618);
+    line-height: calc(36pt*1.618);
+    padding-bottom: 36px;
+  }
+
+  .Staatliches {
+    font-family: 'Staatliches';
   }
 
   .txt h2 {
@@ -184,6 +289,77 @@
     text-align: center;
     padding: 25px 100px;
   }
+
+
+/* Targeted ID */
+
+#services {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#laser-engraving {
+  height: 75vh;
+}
+
+#services h1 {
+    font-size: 41.88pt;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 25.88pt;
+    text-align: center;
+}
+
+#services ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 75px;
+    column-gap: 15px;
+    margin: 10px auto;
+    width: 75%;
+    
+    font-size: 14pt;
+    
+    
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item a {
+  padding: 5px 50px;
+  text-decoration: none;
+  color: #000;
+  transition: all 0.2s ease-in-out;
+}
+
+.item a:hover {
+  background: #222;
+  color: #f1f1f1;
+  border-radius: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /* Scrollbar */
   /* Set the width and height of the scroll bar */

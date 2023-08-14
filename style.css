@@ -13,6 +13,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+@import url("https://use.typekit.net/puk2msc.css");
+
+
 
 
 :root {
@@ -32,13 +35,15 @@ body {
 
     background-color: #fff;
     color: #000;
-    font-family: 'montserrat';
+    font-family: "futura-pt", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     line-height: 1.8;
     /* overflow: hidden; */
 }
 
 .container {
-max-width: 1000px;
+max-width: 1200px;
 margin: 0 auto;
 padding: 30px 20px;
 }
@@ -691,6 +696,23 @@ input[type="file"]{
   .container {
     width: 300px;
   }
+}
+
+
+/* Main Page */
+.main-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px 0;
+  text-align: center;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.main-info img {
+  width: 800px;
+  margin: 0 auto;
 }
 
 
